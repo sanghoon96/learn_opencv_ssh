@@ -2,6 +2,12 @@ import cv2 as cv
 import os
 
 cap = cv.VideoCapture(0)
+(width, height) = (640,480); 
+fps = 20.0
+cap.set(cv.CAP_PROP_FRAME_WIDTH, width)
+cap.set(cv.CAP_PROP_FRAME_HEIGHT, height)
+cap.set(cv.CAP_PROP_FPS, fps)
+
 fourcc = cv.VideoWriter_fourcc(*'XVID')
 out_avi = cv.VideoWriter('datas/videos/output.avi',fourcc, 20.0, (640,480))
 fourcc = cv.VideoWriter_fourcc(*'MP4V')
