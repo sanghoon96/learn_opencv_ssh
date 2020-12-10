@@ -3,7 +3,7 @@ import os
 
 cap = cv.VideoCapture(0)
 fourcc = cv.VideoWriter_fourcc(*'XVID')
-out_avi = cv.VideoWriter('datas/videos/output.avi',fourcc, 20.0, (540,480))
+out_avi = cv.VideoWriter('datas/videos/output.avi',fourcc, 20.0, (640,480))
 fourcc = cv.VideoWriter_fourcc(*'MP4V')
 out_mp4 = cv.VideoWriter('datas/videos/output.mp4',fourcc, 20.0, (640,480))
 
