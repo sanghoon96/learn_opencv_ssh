@@ -2,7 +2,7 @@ import cv2 as cv
 import sys
 import os
 import numpy as np
-
+from matplotlib import pyplot as plt
 root_path = os.getcwd()
 
 filename = '/datas/images/cropKorean.png'
@@ -32,9 +32,9 @@ for i in range(n_boxes):
 cv.imshow('Resource', img)
 
 #thresholding
-def thresholding(image):
-    return cv.threshold(image, 0, 255, cv.THRESH_BINARY + cv.THRESH_OTSU)[1]
-
+def thresholding(image):                # 50 (threshold) > pixel value(Matrix) = 255(maxval), Not is type
+    return cv.threshold(image, 127, 255, cv.THRESH_TRUNC + cv.THRESH_OTSU)[1]
+# img,127,255,cv.THRESH_TRUNC
 img_gray = cv.cvtColor(img_thresholding, cv.COLOR_BGR2GRAY)
 img_thresh = thresholding(img_gray)
 cv.imshow('threshold', img_thresh)
