@@ -37,7 +37,7 @@ def train():
 def test():
     model = cv2.face.LBPHFaceRecognizer_create()
     model.read("tmp.yml")
-    capture = cv2.VideoCapture(1)
+    capture = cv2.VideoCapture(0)
     while capture.isOpened():
         ret, frame = capture.read()
         cascade_face = face_detector(frame)

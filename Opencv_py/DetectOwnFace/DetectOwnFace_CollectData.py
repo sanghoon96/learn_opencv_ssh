@@ -16,7 +16,7 @@ if not os.path.exists(dir_name):
     os.mkdir(dir_name)
 
 face_cascade = cv2.CascadeClassifier(cvdata.haarcascades + 'haarcascade_frontalface_default.xml')
-capture = cv2.VideoCapture(1)
+capture = cv2.VideoCapture(0)
 
 count = 0
 
